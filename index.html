@@ -1,15 +1,15 @@
-```html
+```html id="x8s2k1"
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Modern UI</title>
+<title>Profile Card</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,262 +17,73 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Inter',sans-serif;
+font-family:'Vazirmatn',sans-serif;
 }
 
 body{
 
-background:#060816;
-color:white;
-
-overflow-x:hidden;
-
-}
-
-/* BACKGROUND */
-
-.bg{
-
-position:fixed;
-inset:0;
-
-background:
-radial-gradient(circle at top left,#ff2a2a30,transparent 30%),
-radial-gradient(circle at bottom right,#ff000020,transparent 30%),
-#060816;
-
-z-index:-2;
-
-}
-
-.blur{
-
-position:fixed;
-
-width:500px;
-height:650px;
-
-background:#6d5dfc;
-
-filter:blur(160px);
-
-opacity:0.2;
-
-border-radius:50%;
-
-top:-150px;
-left:-100px;
-
-z-index:-1;
-
-}
-
-/* NAVBAR */
-
-nav{
-
-width:100%;
-
-padding:30px 8%;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-position:fixed;
-
-top:0;
-
-z-index:999;
-
-background:rgba(0,0,0,0.2);
-
-backdrop-filter:blur(20px);
-
-border-bottom:1px solid rgba(255,255,255,0.05);
-
-}
-
-.logo{
-
-font-size:28px;
-font-weight:700;
-
-}
-
-nav ul{
-
-display:flex;
-gap:35px;
-
-list-style:none;
-
-}
-
-nav ul li{
-
-cursor:pointer;
-
-color:#ccc;
-
-transition:0.3s;
-
-}
-
-nav ul li:hover{
-
-color:white;
-
-}
-
-/* HERO */
-
-.hero{
-
-min-height:100vh;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:140px 8% 60px;
-
-gap:60px;
-
-flex-wrap:wrap;
-
-}
-
-.left{
-
-flex:1;
-min-width:320px;
-
-}
-
-.tag{
-
-display:inline-block;
-
-padding:10px 18px;
-
-border-radius:50px;
-
-background:rgba(255,255,255,0.05);
-
-border:1px solid rgba(255,255,255,0.08);
-
-margin-bottom:30px;
-
-color:#aaa;
-
-}
-
-.left h1{
-
-font-size:85px;
-
-line-height:1.05;
-
-font-weight:800;
-
-margin-bottom:25px;
-
-}
-
-.gradient{
-
-background:linear-gradient(90deg,#7a5cff,#00ffd5);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-}
-
-.desc{
-
-max-width:650px;
-
-font-size:18px;
-
-line-height:1.8;
-
-color:#aaa;
-
-margin-bottom:35px;
-
-}
-
-.buttons{
-
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-
-}
-
-.btn{
-
-padding:18px 30px;
-
-border:none;
-
-border-radius:18px;
-
-cursor:pointer;
-
-font-size:16px;
-font-weight:600;
-
-transition:0.3s;
-
-}
-
-.primary{
-
-background:white;
-color:black;
-
-}
-
-.primary:hover{
-
-transform:translateY(-5px);
-
-}
-
-.secondary{
-
-background:rgba(255,255,255,0.05);
-
-border:1px solid rgba(255,255,255,0.08);
-
-color:white;
-
-}
-
-/* RIGHT */
-
-.right{
-
-flex:1;
-min-width:320px;
+height:100vh;
 
 display:flex;
 justify-content:center;
+align-items:center;
 
-position:relative;
+background:
+radial-gradient(circle at top left,#00ff8840,transparent 30%),
+radial-gradient(circle at bottom right,#00ff8840,transparent 30%),
+#050816;
+
+overflow:hidden;
 
 }
 
+/* BACKGROUND SHAPES */
+
+.shape1{
+
+position:absolute;
+
+width:400px;
+height:400px;
+
+background:#00ff88;
+
+filter:blur(180px);
+
+opacity:0.15;
+
+top:-150px;
+left:-120px;
+
+border-radius:50%;
+
+}
+
+.shape2{
+
+position:absolute;
+
+width:350px;
+height:350px;
+
+background:#00ff88;
+
+filter:blur(180px);
+
+opacity:0.1;
+
+bottom:-150px;
+right:-100px;
+
+border-radius:50%;
+
+}
+
+/* CARD */
+
 .card{
 
-width:100%;
-max-width:450px;
-
-height:500px;
-
-border-radius:40px;
+width:420px;
 
 background:rgba(255,255,255,0.04);
 
@@ -280,168 +91,199 @@ border:1px solid rgba(255,255,255,0.08);
 
 backdrop-filter:blur(25px);
 
-padding:25px;
-
-position:relative;
-
-overflow:hidden;
-
-box-shadow:0 0 50px rgba(255,255,255,0.03);
-
-}
-
-.card img{
-
-width:100%;
-height:100%;
-
-object-fit:cover;
-
-border-radius:25px;
-
-}
-
-/* FLOATING */
-
-.floating{
-
-position:absolute;
-
-padding:18px 22px;
-
-border-radius:20px;
-
-background:rgba(255,255,255,0.06);
-
-border:1px solid rgba(255,255,255,0.08);
-
-backdrop-filter:blur(20px);
-
-}
-
-.one{
-
-top:40px;
-left:-40px;
-
-}
-
-.two{
-
-bottom:50px;
-right:-30px;
-
-}
-
-/* SECTION */
-
-.section{
-
-padding:100px 8%;
-
-}
-
-.title{
-
-font-size:55px;
-
-margin-bottom:20px;
-
-}
-
-.sub{
-
-color:#888;
-
-max-width:700px;
-
-line-height:1.8;
-
-margin-bottom:50px;
-
-}
-
-/* GRID */
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-}
-
-.box{
+border-radius:40px;
 
 padding:35px;
 
-border-radius:30px;
+position:relative;
 
-background:rgba(255,255,255,0.04);
+box-shadow:0 0 50px rgba(0,255,136,0.08);
+
+}
+
+/* PROFILE IMAGE */
+
+.avatar-box{
+
+display:flex;
+justify-content:center;
+
+margin-top:-110px;
+
+}
+
+.avatar{
+
+width:190px;
+height:190px;
+
+border-radius:35px;
+
+object-fit:cover;
+
+border:4px solid rgba(0,255,136,0.3);
+
+box-shadow:0 0 40px rgba(0,255,136,0.2);
+
+}
+
+/* NAME */
+
+.name{
+
+text-align:center;
+
+font-size:38px;
+font-weight:700;
+
+margin-top:25px;
+
+color:white;
+
+}
+
+.role{
+
+width:max-content;
+
+margin:18px auto;
+
+padding:12px 22px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,0.05);
 
 border:1px solid rgba(255,255,255,0.08);
 
-backdrop-filter:blur(20px);
+color:#00ff88;
+
+font-size:15px;
+
+}
+
+/* SOCIALS */
+
+.socials{
+
+display:flex;
+justify-content:center;
+gap:15px;
+
+margin-top:25px;
+margin-bottom:35px;
+
+}
+
+.social{
+
+width:60px;
+height:60px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:28px;
+
+cursor:pointer;
 
 transition:0.3s;
 
 }
 
-.box:hover{
+.social:hover{
 
-transform:translateY(-10px);
+transform:translateY(-5px);
 
-}
+background:#00ff88;
 
-.box h2{
-
-margin-bottom:18px;
-
-font-size:28px;
+color:black;
 
 }
 
-.box p{
+/* INFO BOX */
+
+.info-box{
+
+background:rgba(255,255,255,0.03);
+
+border:1px solid rgba(255,255,255,0.05);
+
+border-radius:28px;
+
+padding:20px;
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+/* ITEM */
+
+.item{
+
+background:rgba(0,0,0,0.25);
+
+border-radius:18px;
+
+padding:18px 20px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+border:1px solid rgba(255,255,255,0.05);
+
+}
+
+.label{
 
 color:#999;
 
-line-height:1.8;
+font-size:14px;
 
 }
 
-/* FOOTER */
+.value{
 
-footer{
+color:white;
 
-padding:60px;
+font-size:18px;
 
-text-align:center;
-
-color:#777;
+font-weight:500;
 
 }
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:500px){
 
-.left h1{
+.card{
 
-font-size:55px;
+width:95%;
 
-}
-
-nav ul{
-
-display:none;
+padding:25px;
 
 }
 
-.hero{
+.avatar{
 
-padding-top:120px;
+width:160px;
+height:160px;
+
+}
+
+.name{
+
+font-size:30px;
 
 }
 
@@ -453,141 +295,94 @@ padding-top:120px;
 
 <body>
 
-<div class="bg"></div>
-<div class="blur"></div>
-
-<nav>
-
-<div class="logo">SIDEWAVE</div>
-
-<ul>
-<li>Home</li>
-<li>About</li>
-<li>Projects</li>
-<li>Contact</li>
-</ul>
-
-</nav>
-
-<section class="hero">
-
-<div class="left">
-
-<div class="tag">
-Modern Digital Experience
-</div>
-
-<h1>
-
-Build <span class="gradient">Future</span><br>
-Interfaces Faster
-
-</h1>
-
-<p class="desc">
-
-Create modern and futuristic experiences with smooth
-animations, premium UI and responsive layouts inspired
-by award-winning websites.
-
-</p>
-
-<div class="buttons">
-
-<button class="btn primary">
-Get Started
-</button>
-
-<button class="btn secondary">
-Learn More
-</button>
-
-</div>
-
-</div>
-
-<div class="right">
+<div class="shape1"></div>
+<div class="shape2"></div>
 
 <div class="card">
 
-<img src="https://images.unsplash.com/https://imgur.com/cxQtct3">
+<div class="avatar-box">
 
-<div class="floating one">
-⚡ AI Powered
-</div>
-
-<div class="floating two">
-🚀 Ultra Modern
-</div>
+<img class="avatar"
+src="https://wallpapercave.com/wp/wp16354549.webp">
 
 </div>
 
-</div>
-
-</section>
-
-<section class="section">
-
-<h1 class="title">
-
-Beautiful Modern UI
-
+<h1 class="name">
+AMIRALI
 </h1>
 
-<p class="sub">
+<div class="role">
+🎧 Radio Developer
+</div>
 
-Minimal futuristic design inspired by award-winning
-websites and modern SaaS interfaces.
+<div class="socials">
 
-</p>
-
-<div class="grid">
-
-<div class="box">
-
-<h2>Glassmorphism</h2>
-
-<p>
-
-Modern glass UI with blur effects and gradients.
-
-</p>
+<div class="social">✈</div>
+<div class="social">📷</div>
+<div class="social">💻</div>
+<div class="social">🌐</div>
 
 </div>
 
-<div class="box">
+<div class="info-box">
 
-<h2>Responsive</h2>
+<div class="item">
 
-<p>
-
-Perfect layout for mobile and desktop devices.
-
-</p>
-
+<div>
+<div class="label">
+تاریخ تولد
 </div>
 
-<div class="box">
+<div class="value">
+1387/05/21
+</div>
+</div>
 
-<h2>Animations</h2>
-
-<p>
-
-Smooth transitions and floating effects everywhere.
-
-</p>
-
+<div class="value">
+📅
 </div>
 
 </div>
 
-</section>
+<div class="item">
 
-<footer>
+<div>
+<div class="label">
+شماره موبایل
+</div>
 
-Modern UI Experience © 2026
+<div class="value">
+09000000000
+</div>
+</div>
 
-</footer>
+<div class="value">
+📱
+</div>
+
+</div>
+
+<div class="item">
+
+<div>
+<div class="label">
+محل سکونت
+</div>
+
+<div class="value">
+ایران - اصفهان
+</div>
+</div>
+
+<div class="value">
+📍
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
