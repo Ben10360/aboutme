@@ -1,12 +1,13 @@
 ```html
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI RADIO</title>
 
-<title>About Me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,110 +15,210 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
 
-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:
-linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
-url('https://wallpapercave.com/wp/wp16354549.webp');
-
-background-size:cover;
-background-position:center;
-
-overflow:hidden;
+background:#050816;
 
 color:white;
 
-}
-
-.card{
-
-width:400px;
-
-background:rgba(0,0,0,0.55);
-
-backdrop-filter:blur(15px);
-
-border-radius:30px;
-
-padding:35px;
-
-text-align:center;
-
-border:1px solid rgba(0,255,136,0.15);
-
-box-shadow:0 0 40px rgba(0,255,136,0.15);
+overflow-x:hidden;
 
 }
 
-.avatar{
+/* BACKGROUND */
 
-width:140px;
-height:140px;
+.bg{
+
+position:fixed;
+inset:0;
+
+background:
+radial-gradient(circle at top left,#00ff8840,transparent 35%),
+radial-gradient(circle at bottom right,#7a5cff40,transparent 35%),
+#050816;
+
+z-index:-2;
+
+}
+
+.blur{
+
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:#00ff8850;
+
+filter:blur(140px);
 
 border-radius:50%;
 
-object-fit:cover;
+top:-150px;
+left:-150px;
 
-border:4px solid #00ff88;
-
-margin-bottom:20px;
+z-index:-1;
 
 }
 
-h1{
+/* NAVBAR */
 
-font-size:38px;
+nav{
+
+width:100%;
+
+padding:25px 8%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+position:fixed;
+
+top:0;
+
+z-index:999;
+
+backdrop-filter:blur(20px);
+
+background:rgba(0,0,0,0.2);
+
+border-bottom:1px solid rgba(255,255,255,0.05);
+
+}
+
+.logo{
+
+font-size:30px;
+font-weight:700;
 
 color:#00ff88;
 
-margin-bottom:10px;
+text-shadow:0 0 20px #00ff88;
 
 }
 
-.bio{
+nav ul{
+
+display:flex;
+gap:30px;
+
+list-style:none;
+
+}
+
+nav ul li{
+
+cursor:pointer;
+
+transition:0.3s;
 
 color:#ccc;
 
-line-height:1.8;
+}
+
+nav ul li:hover{
+
+color:#00ff88;
+
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:140px 8% 60px;
+
+gap:60px;
+
+flex-wrap:wrap;
+
+}
+
+.left{
+
+flex:1;
+min-width:320px;
+
+}
+
+.tag{
+
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:50px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.08);
 
 margin-bottom:25px;
+
+color:#00ff88;
+
+}
+
+.left h1{
+
+font-size:75px;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+.left h1 span{
+
+color:#00ff88;
+
+text-shadow:0 0 25px #00ff88;
+
+}
+
+.desc{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#aaa;
+
+max-width:650px;
+
+margin-bottom:35px;
 
 }
 
 .buttons{
 
 display:flex;
-
-flex-direction:column;
-
-gap:15px;
+gap:20px;
+flex-wrap:wrap;
 
 }
 
-button{
+.btn{
 
-padding:16px;
+padding:18px 32px;
 
 border:none;
 
-border-radius:16px;
+border-radius:18px;
 
-background:#00ff88;
-
-color:black;
-
-font-size:18px;
-
-font-weight:bold;
+font-size:16px;
+font-weight:600;
 
 cursor:pointer;
 
@@ -125,49 +226,441 @@ transition:0.3s;
 
 }
 
-button:hover{
+.btn-main{
 
-transform:scale(1.05);
+background:#00ff88;
+
+color:black;
+
+box-shadow:0 0 25px #00ff8870;
+
+}
+
+.btn-main:hover{
+
+transform:translateY(-5px);
+
+}
+
+.btn-sec{
+
+background:rgba(255,255,255,0.05);
+
+color:white;
+
+border:1px solid rgba(255,255,255,0.08);
+
+}
+
+.btn-sec:hover{
+
+background:rgba(255,255,255,0.1);
+
+}
+
+/* RIGHT CARD */
+
+.right{
+
+flex:1;
+min-width:320px;
+
+display:flex;
+justify-content:center;
+
+}
+
+.card{
+
+width:100%;
+max-width:480px;
+
+background:rgba(255,255,255,0.04);
+
+border:1px solid rgba(255,255,255,0.08);
+
+border-radius:35px;
+
+padding:30px;
+
+backdrop-filter:blur(20px);
+
+box-shadow:0 0 45px rgba(0,255,136,0.08);
+
+}
+
+.top{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.live{
+
+padding:10px 16px;
+
+border-radius:12px;
+
+background:#00ff88;
+
+color:black;
+
+font-weight:700;
+
+}
+
+.profile{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.profile img{
+
+width:60px;
+height:60px;
+
+border-radius:18px;
+
+object-fit:cover;
+
+}
+
+.music-cover{
+
+width:100%;
+height:280px;
+
+object-fit:cover;
+
+border-radius:28px;
+
+margin-bottom:25px;
+
+}
+
+.song{
+
+font-size:28px;
+font-weight:600;
+
+margin-bottom:10px;
+
+}
+
+.artist{
+
+color:#aaa;
+
+margin-bottom:30px;
+
+}
+
+audio{
+
+width:100%;
+
+filter:hue-rotate(70deg);
+
+}
+
+/* FEATURES */
+
+.features{
+
+padding:80px 8%;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.feature{
+
+background:rgba(255,255,255,0.04);
+
+border:1px solid rgba(255,255,255,0.08);
+
+padding:35px;
+
+border-radius:30px;
+
+backdrop-filter:blur(20px);
+
+transition:0.3s;
+
+}
+
+.feature:hover{
+
+transform:translateY(-10px);
+
+border-color:#00ff88;
+
+}
+
+.feature h2{
+
+margin:20px 0;
+
+font-size:24px;
+
+}
+
+.feature p{
+
+color:#aaa;
+
+line-height:1.7;
+
+}
+
+/* FOOTER */
+
+footer{
+
+padding:50px 8%;
+
+text-align:center;
+
+color:#777;
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.left h1{
+
+font-size:50px;
+
+}
+
+.hero{
+
+padding-top:120px;
+
+}
+
+nav ul{
+
+display:none;
+
+}
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="card">
+<div class="bg"></div>
+<div class="blur"></div>
 
-<img class="avatar"
-src="https://wallpapercave.com/wp/wp16354549.webp">
+<nav>
 
-<h1>AMIRALI</h1>
+<div class="logo">BEN10 AI</div>
 
-<p class="bio">
+<ul>
+<li>Home</li>
+<li>Playlist</li>
+<li>About</li>
+<li>Contact</li>
+</ul>
 
-Welcome To My Radio Website 🎧<br>
-BEN10 Music Radio
+</nav>
+
+<section class="hero">
+
+<div class="left">
+
+<div class="tag">
+🟢 AI Powered Music Platform
+</div>
+
+<h1>
+
+Modern <span>Music</span><br>
+Streaming Experience
+
+</h1>
+
+<p class="desc">
+
+Create your own futuristic online radio station with
+glassmorphism design, premium UI, modern animations
+and beautiful music streaming experience.
 
 </p>
 
 <div class="buttons">
 
-<button onclick="window.open('https://t.me/USERNAME')">
-Telegram
+<button class="btn btn-main">
+Start Listening
 </button>
 
-<button onclick="window.open('https://instagram.com')">
-Instagram
-</button>
-
-<button onclick="window.open('https://github.com')">
-GitHub
+<button class="btn btn-sec">
+Explore More
 </button>
 
 </div>
 
 </div>
+
+<div class="right">
+
+<div class="card">
+
+<div class="top">
+
+<div class="profile">
+
+<img src="https://wallpapercave.com/wp/wp16354549.webp">
+
+<div>
+
+<h3>BEN10 RADIO</h3>
+<p>Live Streaming</p>
+
+</div>
+
+</div>
+
+<div class="live">
+LIVE
+</div>
+
+</div>
+
+<img class="music-cover"
+src="https://wallpapercave.com/wp/wp16354549.webp">
+
+<div class="song" id="songName">
+
+Loading...
+
+</div>
+
+<div class="artist">
+
+24/7 Online Music Radio
+
+</div>
+
+<audio id="audio" controls autoplay></audio>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<div class="feature">
+
+<h2>⚡ Fast Streaming</h2>
+
+<p>
+
+Ultra smooth online music streaming experience with
+modern design and responsive layout.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<h2>🎧 Premium Audio</h2>
+
+<p>
+
+Play unlimited songs with futuristic player interface
+and glassmorphism effects.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<h2>🌐 Fully Customizable</h2>
+
+<p>
+
+Change images, colors, music, titles and links easily
+without coding experience.
+
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+BEN10 RADIO © 2025
+
+</footer>
+
+<script>
+
+const songs = [
+
+"songs/Ahange Shahlay Man [SevilMusic].mp3",
+"songs/Dariush - Bonbast.mp3",
+"songs/Habib - Nafas [320].mp3"
+
+];
+
+let currentSong = 0;
+
+const audio = document.getElementById("audio");
+const songName = document.getElementById("songName");
+
+function loadSong(index){
+
+audio.src = songs[index];
+
+songName.innerText = songs[index]
+.split("/")
+.pop();
+
+audio.play();
+
+}
+
+function nextSong(){
+
+currentSong++;
+
+if(currentSong >= songs.length){
+
+currentSong = 0;
+
+}
+
+loadSong(currentSong);
+
+}
+
+audio.addEventListener("ended",nextSong);
+
+loadSong(currentSong);
+
+</script>
 
 </body>
 </html>
