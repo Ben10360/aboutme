@@ -1,14 +1,16 @@
-```html id="x8s2k1"
+```html
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Profile Card</title>
+<title>BEN10 RADIO</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -35,9 +37,11 @@ radial-gradient(circle at bottom right,#00ff8840,transparent 30%),
 
 overflow:hidden;
 
+padding:20px;
+
 }
 
-/* BACKGROUND SHAPES */
+/* BACKGROUND */
 
 .shape1{
 
@@ -56,6 +60,8 @@ top:-150px;
 left:-120px;
 
 border-radius:50%;
+
+animation:move1 10s infinite alternate;
 
 }
 
@@ -77,13 +83,40 @@ right:-100px;
 
 border-radius:50%;
 
+animation:move2 12s infinite alternate;
+
+}
+
+@keyframes move1{
+
+from{
+transform:translateY(0px);
+}
+
+to{
+transform:translateY(40px);
+}
+
+}
+
+@keyframes move2{
+
+from{
+transform:translateX(0px);
+}
+
+to{
+transform:translateX(-40px);
+}
+
 }
 
 /* CARD */
 
 .card{
 
-width:420px;
+width:100%;
+max-width:420px;
 
 background:rgba(255,255,255,0.04);
 
@@ -93,172 +126,161 @@ backdrop-filter:blur(25px);
 
 border-radius:40px;
 
-padding:35px;
+padding:30px;
 
 position:relative;
 
 box-shadow:0 0 50px rgba(0,255,136,0.08);
 
-}
+z-index:2;
 
-/* PROFILE IMAGE */
-
-.avatar-box{
-
-display:flex;
-justify-content:center;
-
-margin-top:-110px;
+animation:float 5s ease-in-out infinite;
 
 }
 
-.avatar{
+@keyframes float{
 
-width:190px;
-height:190px;
+0%{
+transform:translateY(0px);
+}
 
-border-radius:35px;
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* IMAGE */
+
+.cover{
+
+width:100%;
+height:260px;
+
+border-radius:30px;
 
 object-fit:cover;
 
-border:4px solid rgba(0,255,136,0.3);
+border:3px solid rgba(0,255,136,0.2);
 
-box-shadow:0 0 40px rgba(0,255,136,0.2);
+box-shadow:0 0 30px rgba(0,255,136,0.2);
+
+margin-bottom:25px;
 
 }
 
-/* NAME */
+/* TITLE */
 
-.name{
+.logo{
 
 text-align:center;
 
-font-size:38px;
+font-size:35px;
 font-weight:700;
 
-margin-top:25px;
+color:#00ff88;
+
+margin-bottom:20px;
+
+text-shadow:0 0 20px #00ff88;
+
+}
+
+/* SONG */
+
+.song{
+
+text-align:center;
+
+font-size:20px;
+font-weight:600;
+
+margin-bottom:10px;
+
+word-break:break-word;
 
 color:white;
 
 }
 
-.role{
+.artist{
 
-width:max-content;
+text-align:center;
 
-margin:18px auto;
+color:#999;
 
-padding:12px 22px;
-
-border-radius:16px;
-
-background:rgba(255,255,255,0.05);
-
-border:1px solid rgba(255,255,255,0.08);
-
-color:#00ff88;
-
-font-size:15px;
+margin-bottom:25px;
 
 }
 
-/* SOCIALS */
+/* AUDIO */
 
-.socials{
+audio{
 
-display:flex;
-justify-content:center;
-gap:15px;
+width:100%;
 
-margin-top:25px;
-margin-bottom:35px;
+margin-bottom:20px;
+
+filter:hue-rotate(70deg);
 
 }
 
-.social{
+/* BUTTON */
 
-width:60px;
-height:60px;
+.btn{
+
+width:100%;
+
+padding:16px;
+
+border:none;
 
 border-radius:18px;
 
-background:rgba(255,255,255,0.05);
+background:#38bdf8;
 
-border:1px solid rgba(255,255,255,0.08);
+color:white;
 
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-size:28px;
+font-size:16px;
+font-weight:700;
 
 cursor:pointer;
 
 transition:0.3s;
 
-}
-
-.social:hover{
-
-transform:translateY(-5px);
-
-background:#00ff88;
-
-color:black;
+box-shadow:0 0 25px rgba(56,189,248,0.3);
 
 }
 
-/* INFO BOX */
+.btn:hover{
 
-.info-box{
+transform:scale(1.03);
 
-background:rgba(255,255,255,0.03);
-
-border:1px solid rgba(255,255,255,0.05);
-
-border-radius:28px;
-
-padding:20px;
-
-display:flex;
-flex-direction:column;
-gap:15px;
+box-shadow:0 0 40px #38bdf8;
 
 }
 
-/* ITEM */
+/* ABOUT */
 
-.item{
+.about{
 
-background:rgba(0,0,0,0.25);
+margin-top:20px;
 
-border-radius:18px;
-
-padding:18px 20px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-border:1px solid rgba(255,255,255,0.05);
+text-align:center;
 
 }
 
-.label{
+.about a{
 
-color:#999;
+color:#00ff88;
 
-font-size:14px;
+text-decoration:none;
 
-}
-
-.value{
-
-color:white;
-
-font-size:18px;
-
-font-weight:500;
+font-size:16px;
 
 }
 
@@ -266,24 +288,21 @@ font-weight:500;
 
 @media(max-width:500px){
 
-.card{
+.logo{
 
-width:95%;
-
-padding:25px;
+font-size:28px;
 
 }
 
-.avatar{
+.cover{
 
-width:160px;
-height:160px;
+height:220px;
 
 }
 
-.name{
+.song{
 
-font-size:30px;
+font-size:17px;
 
 }
 
@@ -300,86 +319,130 @@ font-size:30px;
 
 <div class="card">
 
-<div class="avatar-box">
-
-<img class="avatar"
-src="blob:https://web.bale.ai/51cb2a69-a1cd-49d1-b98a-aeab0f3330e4">
-
+<div class="logo">
+BEN10 RADIO
 </div>
 
-<h1 class="name">
-AMIRALI
-</h1>
+<img class="cover"
+src="https://wallpapercave.com/wp/wp16354549.webp">
 
-<div class="role">
-🎧 Radio Developer
+<div class="song" id="songName">
+READY TO PLAY
 </div>
 
-<div class="socials">
-
-
-
+<div class="artist">
+24/7 Online Radio
 </div>
 
-<div class="info-box">
+<audio id="audio" controls></audio>
 
-<div class="item">
+<button class="btn" onclick="playSong()">
+▶ PLAY RADIO
+</button>
 
-<div>
-<div class="label">
-تاریخ تولد
-</div>
+<div class="about">
 
-<div class="value">
-1386/09/18
-</div>
-</div>
+<a href="https://aboutme.amirali-nasiri-200.workers.dev/" target="_blank">
 
-<div class="value">
-📅
-</div>
+👤 About Me
 
-</div>
-
-<div class="item">
-
-<div>
-<div class="label">
-شماره موبایل
-</div>
-
-<div class="value">
-09939009115
-</div>
-</div>
-
-<div class="value">
-📱
-</div>
-
-</div>
-
-<div class="item">
-
-<div>
-<div class="label">
-محل سکونت
-</div>
-
-<div class="value">
-ایران - یزد
-</div>
-</div>
-
-<div class="value">
-📍
-</div>
+</a>
 
 </div>
 
 </div>
 
-</div>
+<script>
+
+const songs = [
+
+"https://uploadkon.ir/uploads/564429_26Dariush-Baradar-Jaan-Copy.mp3",
+
+"https://uploadkon.ir/uploads/5faf29_26Dariush-Be-man-Nagoo-Dooset-Daram-Copy.mp3",
+
+"https://uploadkon.ir/uploads/da6529_26Dariush-Bonbast.mp3",
+
+"https://uploadkon.ir/uploads/e1b629_26Dariush-Booye-Gandom.mp3",
+
+"https://uploadkon.ir/uploads/fff829_26Dariush-Cheshme-Man.mp3",
+
+"https://uploadkon.ir/uploads/34f429_26Dariush-Faryad-Zire-Aab.mp3",
+
+"https://uploadkon.ir/uploads/bdea29_26Dariush-Gelayeh.mp3",
+
+"https://uploadkon.ir/uploads/064329_26Dariush-Gozashtehaye-Door.mp3",
+
+"https://uploadkon.ir/uploads/b55629_26Dariush-Hasood.mp3",
+
+"https://uploadkon.ir/uploads/26eb29_26Dariush-Khorshid-Khanoom.mp3",
+
+"https://uploadkon.ir/uploads/aeaa29_26Dariush-Niyayesh.mp3"
+
+];
+
+let currentSong = 0;
+
+const audio = document.getElementById("audio");
+
+const songName = document.getElementById("songName");
+
+/* LOAD SONG */
+
+function loadSong(index){
+
+audio.src = songs[index];
+
+const cleanName = songs[index]
+
+.split("/")
+
+.pop()
+
+.replace(".mp3","")
+
+.replaceAll("-"," ")
+
+.replaceAll("_"," ");
+
+songName.innerText = decodeURIComponent(cleanName);
+
+}
+
+/* PLAY */
+
+function playSong(){
+
+audio.play();
+
+}
+
+/* NEXT SONG */
+
+function nextSong(){
+
+currentSong++;
+
+if(currentSong >= songs.length){
+
+currentSong = 0;
+
+}
+
+loadSong(currentSong);
+
+audio.play();
+
+}
+
+/* AUTO NEXT */
+
+audio.addEventListener("ended", nextSong);
+
+/* FIRST LOAD */
+
+loadSong(currentSong);
+
+</script>
 
 </body>
 </html>
