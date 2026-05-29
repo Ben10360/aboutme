@@ -392,7 +392,7 @@ function loadSong(index){
 
 audio.src = songs[index];
 
-const cleanName = songs[index]
+audio.src = songs[index] + "?t=" + new Date().getTime(); audio.load();
 
 .split("/")
 
