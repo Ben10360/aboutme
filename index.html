@@ -1,15 +1,10 @@
-```html
 <!DOCTYPE html>
 <html lang="fa">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RADIO PROFILE</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>AMIRALI</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
 
@@ -31,301 +26,145 @@ justify-content:center;
 align-items:center;
 
 background:
-radial-gradient(circle at top left,#00ff8840,transparent 30%),
-radial-gradient(circle at bottom right,#00ff8840,transparent 30%),
-#050816;
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+url("https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4");
+
+background-size:cover;
+background-position:center;
 
 overflow:hidden;
 
-padding:20px;
-
 }
-
-/* BACKGROUND */
-
-.blur1{
-
-position:absolute;
-
-width:400px;
-height:400px;
-
-background:#00ff88;
-
-filter:blur(180px);
-
-opacity:0.15;
-
-top:-150px;
-left:-100px;
-
-border-radius:50%;
-
-animation:move1 8s infinite alternate;
-
-}
-
-.blur2{
-
-position:absolute;
-
-width:350px;
-height:350px;
-
-background:#00ff88;
-
-filter:blur(180px);
-
-opacity:0.1;
-
-bottom:-120px;
-right:-100px;
-
-border-radius:50%;
-
-animation:move2 10s infinite alternate;
-
-}
-
-@keyframes move1{
-
-from{
-transform:translateY(0px);
-}
-
-to{
-transform:translateY(40px);
-}
-
-}
-
-@keyframes move2{
-
-from{
-transform:translateX(0px);
-}
-
-to{
-transform:translateX(-40px);
-}
-
-}
-
-/* CARD */
 
 .card{
 
-width:100%;
-max-width:430px;
-
-background:rgba(255,255,255,0.04);
-
-border:1px solid rgba(255,255,255,0.08);
-
-backdrop-filter:blur(25px);
-
-border-radius:40px;
+width:95%;
+max-width:450px;
 
 padding:35px;
 
-position:relative;
+background:rgba(255,255,255,.05);
 
-box-shadow:0 0 50px rgba(0,255,136,0.08);
+backdrop-filter:blur(20px);
 
-z-index:2;
+border-radius:35px;
 
-}
+border:1px solid rgba(255,255,255,.08);
 
-/* AVATAR */
+box-shadow:0 0 50px rgba(0,255,136,.15);
 
-.avatar-box{
+text-align:center;
 
-display:flex;
-justify-content:center;
-
-margin-top:-110px;
+color:white;
 
 }
 
 .avatar{
 
-width:190px;
-height:190px;
+width:180px;
+height:180px;
 
-border-radius:35px;
+border-radius:50%;
 
 object-fit:cover;
 
-border:4px solid rgba(0,255,136,0.3);
+border:4px solid rgba(0,255,136,.4);
 
-box-shadow:0 0 40px rgba(0,255,136,0.2);
+box-shadow:0 0 35px rgba(0,255,136,.4);
+
+margin-bottom:20px;
 
 }
 
-/* NAME */
-
 .name{
 
-text-align:center;
-
-font-size:36px;
+font-size:38px;
 font-weight:700;
-
-margin-top:25px;
-
-color:white;
 
 }
 
 .role{
 
-width:max-content;
-
-margin:18px auto;
-
-padding:12px 22px;
-
-border-radius:16px;
-
-background:rgba(255,255,255,0.05);
-
-border:1px solid rgba(255,255,255,0.08);
+margin-top:10px;
 
 color:#00ff88;
 
-font-size:15px;
+font-size:16px;
 
 }
 
-/* SOCIALS */
+.info{
 
-.socials{
+margin-top:30px;
 
 display:flex;
-justify-content:center;
-gap:18px;
+flex-direction:column;
+gap:12px;
+
+}
+
+.box{
+
+padding:16px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.05);
+
+font-size:17px;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:12px;
 
 margin-top:25px;
-margin-bottom:35px;
 
 }
 
-.social{
+.buttons a{
 
-width:65px;
-height:65px;
+flex:1;
 
-border-radius:20px;
+padding:15px;
 
-background:rgba(255,255,255,0.05);
-
-border:1px solid rgba(255,255,255,0.08);
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-size:30px;
-
-text-decoration:none;
-
-transition:0.3s;
-
-color:white;
-
-}
-
-.social:hover{
-
-transform:translateY(-5px);
+border-radius:16px;
 
 background:#00ff88;
 
 color:black;
 
-box-shadow:0 0 25px #00ff88;
+font-weight:700;
+
+text-decoration:none;
+
+transition:.3s;
 
 }
 
-/* INFO */
+.buttons a:hover{
 
-.info-box{
-
-background:rgba(255,255,255,0.03);
-
-border:1px solid rgba(255,255,255,0.05);
-
-border-radius:28px;
-
-padding:20px;
-
-display:flex;
-flex-direction:column;
-gap:15px;
+transform:translateY(-4px);
 
 }
-
-.item{
-
-background:rgba(0,0,0,0.25);
-
-border-radius:18px;
-
-padding:18px 20px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-border:1px solid rgba(255,255,255,0.05);
-
-}
-
-.label{
-
-color:#999;
-
-font-size:14px;
-
-}
-
-.value{
-
-color:white;
-
-font-size:18px;
-
-font-weight:500;
-
-}
-
-/* MOBILE */
 
 @media(max-width:500px){
 
-.card{
-
-padding:25px;
-
-}
-
 .avatar{
 
-width:160px;
-height:160px;
+width:150px;
+height:150px;
 
 }
 
 .name{
 
-font-size:28px;
-
-}
-
-.social{
-
-width:58px;
-height:58px;
+font-size:30px;
 
 }
 
@@ -337,113 +176,48 @@ height:58px;
 
 <body>
 
-<div class="blur1"></div>
-<div class="blur2"></div>
-
 <div class="card">
-
-<div class="avatar-box">
 
 <img class="avatar"
 src="https://i.imgur.com/8Km9tLL.jpg">
 
-</div>
-
-<h1 class="name">
+<div class="name">
 AMIRALI
-</h1>
+</div>
 
 <div class="role">
 🎧 RADIO DEVELOPER
 </div>
 
-<div class="socials">
+<div class="info">
 
-<a class="social"
-href="https://t.me/USERNAME"
-target="_blank">
+<div class="box">
+🎂 1386/09/18
+</div>
 
-✈️
+<div class="box">
+📍 Iran - Yazd
+</div>
 
+<div class="box">
+🎵 Founder Of BEN10 Radio
+</div>
+
+</div>
+
+<div class="buttons">
+
+<a href="https://t.me/Nasiri4440" target="_blank">
+Telegram
 </a>
 
-<a class="social"
-href="https://instagram.com/USERNAME"
-target="_blank">
-
-📷
-
+<a href="https://instagram.com/USERNAME" target="_blank">
+Instagram
 </a>
-
-</div>
-
-<div class="info-box">
-
-<div class="item">
-
-<div>
-
-<div class="label">
-سن
-</div>
-
-<div class="value">
-18 Years
-</div>
-
-</div>
-
-<div class="value">
-🎂
-</div>
-
-</div>
-
-<div class="item">
-
-<div>
-
-<div class="label">
-مهارت
-</div>
-
-<div class="value">
-Radio Designer
-</div>
-
-</div>
-
-<div class="value">
-🎵
-</div>
-
-</div>
-
-<div class="item">
-
-<div>
-
-<div class="label">
-موقعیت
-</div>
-
-<div class="value">
-Iran - Yazd
-</div>
-
-</div>
-
-<div class="value">
-📍
-</div>
-
-</div>
 
 </div>
 
 </div>
 
 </body>
-
 </html>
-```
